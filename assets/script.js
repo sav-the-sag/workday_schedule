@@ -21,3 +21,10 @@ $(function saveButton() {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+
+// Set up an element to display the current date
+function setupCurrentDateEl() {
+
+  // Get the current day in a nice format and display it
+  $("#currentDay").text(moment().format("dddd, MMMM Do"));
+}
