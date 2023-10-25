@@ -52,7 +52,14 @@ $(function saveButton() {
       var hourBlock = $(`#input${i}`);
       // get the 24 hour value of the time block w data-attribute
       var hour = hourBlock.attr("data-hour");
-
+      // set the background color of the calendar event based on whether its future, present, or past
+      if (now > hour) {
+        hourBlock.addClass("bg-secondary");
+      } else if (now < hour) {
+        hourBlock.addClass("bg-success");
+      } else if (now == hour) {
+        hourBlock.addClass("bg-danger");
+      }
     }
   }
   // TODO: Add code to get any user input that was saved in localStorage and set
