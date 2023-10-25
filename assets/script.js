@@ -47,7 +47,11 @@ $(function saveButton() {
     // get the 24 hour value of the current time
     var now = moment().format("H");
     // set each element
-    for (var i = 0; i < 9; i++){
+    for (var i = 0; i < 9; i++) {
+      // get the time block element to set the background
+      var hourBlock = $(`#input${i}`);
+      // get the 24 hour value of the time block w data-attribute
+      var hour = hourBlock.attr("data-hour");
 
     }
   }
