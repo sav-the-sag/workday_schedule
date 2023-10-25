@@ -46,7 +46,10 @@ $(function saveButton() {
 
     // get the 24 hour value of the current time
     var now = moment().format("H");
+    // set each element
+    for (var i = 0; i < 9; i++){
 
+    }
   }
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
