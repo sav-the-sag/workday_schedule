@@ -54,23 +54,30 @@ $(function saveButton() {
       var hour = hourBlock.attr("data-hour");
       // set the background color of the calendar event based on whether its future, present, or past
       if (now > hour) {
-        hourBlock.addClass("bg-secondary");
+        hourBlock.setAttribute("bg-secondary");
       } else if (now < hour) {
-        hourBlock.addClass("bg-success");
+        hourBlock.setAttribute("bg-success");
       } else if (now == hour) {
-        hourBlock.addClass("bg-danger");
+        hourBlock.setAttribute("bg-danger");
       }
     }
   }
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  // Save each calendar event text to localstorage by inserting it into the array
+  // save each calendar event text to localstorage by inserting it into the array
   function saveText(id) {
 
     // get the current events array from localstorage
     var currentEvents = JSON.parse(localStorage.getItem("events"));
+    // get the new input text the user has typed
+    var inputText = $(`#input${id}`).val();
 
+    // store the input text in the localstorage array at the right time block
+    currentEvents[id] = inputText;
+
+    // resave the array to localstorage
+    localStorage.setItem("events", JSON.stringify(currentEvents));
   }
   // TODO: Add code to display the current date in the header of the page.
 });
