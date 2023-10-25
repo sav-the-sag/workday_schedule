@@ -11,6 +11,32 @@ $(function saveButton() {
   $("#saveItem0").on("click", () => {
     saveText(0);
   });
+
+  $("#saveItem1").on("click", () => {
+    saveText(1);
+  });
+  $("#saveItem2").on("click", () => {
+    saveText(2);
+  });
+  $("#saveItem3").on("click", () => {
+    saveText(3);
+  });
+  $("#saveItem4").on("click", () => {
+    saveText(4);
+  });
+  $("#saveItem5").on("click", () => {
+    saveText(5);
+  });
+  $("#saveItem6").on("click", () => {
+    saveText(6);
+  });
+  $("#saveItem7").on("click", () => {
+    saveText(7);
+  });
+  $("#saveItem8").on("click", () => {
+    saveText(8);
+  });
+
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
@@ -18,14 +44,20 @@ $(function saveButton() {
   // current hour in 24-hour time?
   function setColors() {
 
-    // Get the 24 hour value of the current time
+    // get the 24 hour value of the current time
     var now = moment().format("H");
-  
+
   }
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  //
+  // Save each calendar event text to localstorage by inserting it into the array
+  function saveText(id) {
+
+    // get the current events array from localstorage
+    var currentEvents = JSON.parse(localStorage.getItem("events"));
+
+  }
   // TODO: Add code to display the current date in the header of the page.
 });
 
